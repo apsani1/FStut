@@ -97,9 +97,18 @@ topBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-//  Contact Form Validation 
-const form = document.getElementById("contactForm");
+//  Skill Bars Animation
+window.addEventListener("scroll", () => {
+    const skillsSection = document.getElementById("skills");
+    if (skillsSection && skillsSection.getBoundingClientRect().top < window.innerHeight / 1.2) {
+        skillBars.forEach(bar => {
+            const progress = bar.getAttribute('data-progress');
+            bar.style.width = progress;
+        });
+    }
+});
 
+//  Contact Form localStorage Handling
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -107,15 +116,13 @@ form.addEventListener("submit", (e) => {
     let email = form.email.value.trim();
     let msg = form.message.value.trim();
 
-    if (!name || !email || !msg) {
-        alert("Please fill all fields.");
-        return;
-    }
+    if (!name || !email || !msg) return;
 
-    if (!email.includes("@") || !email.includes(".")) {
-        alert("Enter a valid email.");
-        return;
-    }
+    if (!email.includes("@") || !email.includes(".")) return;
 
-    form.submit(); 
+    localStorage.setItem("contactName", name);
+    localStorage.setItem("contactEmail", email);
+    localStorage.setItem("contactMsg", msg);
+
+    window.location.href = "form-details.html";
 });
