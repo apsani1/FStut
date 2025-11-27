@@ -1,10 +1,10 @@
-// ===== Dark Mode Toggle =====
+//  Dark Mode Toggle 
 const themeBtn = document.getElementById("themeToggle");
 themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 });
 
-// ===== Canvas Drawing (Hello Apsani) =====
+//  Canvas Drawing (Hello Apsani) 
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -17,7 +17,7 @@ ctx.font = "26px Arial";
 ctx.fillStyle = "white";
 ctx.fillText("Hello Apsani", 50, 75);
 
-// ===== Image Slider =====
+//  Image Slider 
 let slides = document.querySelectorAll(".slide");
 let index = 0;
 
@@ -85,3 +85,37 @@ function resetAutoplay() {
 
 // Initial display
 showSlide(0);
+
+//  Back to Top Button 
+const topBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
+topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+//  Contact Form Validation 
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let name = form.name.value.trim();
+    let email = form.email.value.trim();
+    let msg = form.message.value.trim();
+
+    if (!name || !email || !msg) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("Enter a valid email.");
+        return;
+    }
+
+    form.submit(); 
+});
