@@ -3,53 +3,107 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apsani Budhathoki</title>
+    <title>Apsani Budhathoki | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
+
+<header>
+    <h2 class="logo">Apsani</h2>
+    <nav>
+        <a href="#intro">Home</a>
+        <a href="#qualification">Qualification</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#">Experience</a>
         <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    </nav>
+    <button id="themeToggle" class="toggle-btn">☀/🌙</button>
+</header>
 
-    <div class="container">
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <img src="Apsu.png" class="profile-img" />
-            <p>Hello! I am Apsani Budhathoki, a dedicated student who loves learning new things and exploring the world of technology. I love creating clean and responsive designs.</p>
-        </section>
+<!-- INTRO -->
+<section id="intro" class="intro">
+    <img src="Apsu.png" class="intro-img">
+    <h1>Hello, I'm <span>Apsani Budhathoki</span></h1>
+    <p>A passionate student exploring the world of technology.<br>
+    I enjoy designing clean, responsive, and interactive web experiences.</p>
+</section>
 
-        <section id="projects" class="section">
-            <h2>My Projects</h2>
-            <div class="projects">
-                <div class="project-card">
-                    <h3>Weather site</h3>
-                    <p>A site that shows thee forecasted weather in real time when you search the city's name.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Noughts and crosses</h3>
-                    <p>An engaging game.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Personal Portfolio</h3>
-                    <p>A website which overviews my carrier expertise.</p>
-                </div>
-            </div>
-        </section>
+<!-- QUALIFICATION -->
+<section id="qualification" class="section">
+    <h2>My Qualification</h2>
+    <ul class="qual-list">
+        <li>✔ Completed +2 in Management</li>
+        <li>✔ Currently studying Computing</li>
+        <li>✔ 1 Year experience in Web Development</li>
+        <li>✔ Decent understanding of HTML, CSS, JS, PHP</li>
+    </ul>
+</section>
 
-        <section id="contact" class="section">
-            <h2>Contact Me</h2>
-            <p>Email: budhathokiapsasni@gmail.cpm</p>
-            <p>LinkedIn: linkedin.com/in/yourprofile</p>
-        </section>
+<!-- ABOUT ME + CANVAS + AUDIO + VIDEO -->
+<section id="about" class="section">
+    <h2>About My Journey</h2>
+    <p>I started my tech journey 1 year ago. During this period, I learned HTML, CSS, JavaScript, PHP, and basic Python. I have worked on multiple projects and improved my problem-solving skills. My dream is to become a skilled full-stack developer.</p>
+
+    <!-- CANVAS -->
+    <canvas id="myCanvas" width="300" height="150"></canvas>
+
+    <!-- AUDIO + VIDEO -->
+    <div class="media">
+        <h3>My Audio</h3>
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+        </audio>
+
+        <h3>My Video</h3>
+        <video width="300" controls>
+            <source src="video.mp4" type="video/mp4">
+        </video>
     </div>
+</section>
 
-    <footer>
-        <p>© 2025 My Portfolio. All Rights Reserved.</p>
-    </footer>
+<section class="slider">
+  <h2>Image Slider</h2>
+  <div class="slide-container">
+    <div class="slide"><img src="img1.jpg" alt="Slide 1"></div>
+    <div class="slide"><img src="img2.jpg" alt="Slide 2"></div>
+    <div class="slide"><img src="img3.jpg" alt="Slide 3"></div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <div class="dots" id="dots"></div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+    <h2>My Projects</h2>
+    <div class="projects">
+        <div class="project-card">
+            <h3>Weather App</h3>
+            <p>Shows real-time weather for any city.</p>
+        </div>
+        <div class="project-card">
+            <h3>Noughts & Crosses</h3>
+            <p>Fun and interactive Python game.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Enter your name" required>
+        <input type="email" placeholder="Enter your email" required>
+        <textarea placeholder="Write your message..." required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 Apsani | All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
